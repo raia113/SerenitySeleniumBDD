@@ -1,7 +1,7 @@
 defaultTasks 'clean','test','aggregate'
 
 apply plugin: 'java'
-apply plugin: 'net.serenity-bdd.aggregator'
+apply plugin: 'net.serenity-bdd.serenity-gradle-plugin'
 
 group 'org.automationserenity'
 version '1.0-SNAPSHOT'
@@ -12,10 +12,11 @@ repositories {
 
 buildscript {
     project.ext {
-        serenityVersion = '2.3.12'
+        serenityVersion = '3.4.2'
     }
     repositories {
         mavenLocal()
+        gradlePluginPortal()
         jcenter()
     }
     dependencies {
@@ -28,9 +29,9 @@ targetCompatibility = 1.8
 
 ext {
     slf4jVersion = '1.7.7'
-    serenityCoreVersion = '2.3.12'
-    junitVersion = '4.13'
-    assertJVersion = '3.8.0'
+    serenityCoreVersion = '3.4.2'
+    junitVersion = '4.13.2'
+    assertJVersion = '3.23.1'
     logbackVersion = '1.2.3'
 }
 
